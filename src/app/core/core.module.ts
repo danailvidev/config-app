@@ -7,10 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { EnsureModuleLoadedOnceGuard } from '../shared/module-import-guard';
 import { environment } from '../../environments/environment';
 
+// services
+import { AppSettingsService } from './appsetting.service';
+
 @NgModule({
   imports: [
+    HttpModule,
+    HttpClientModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [AppSettingsService]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
   constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
