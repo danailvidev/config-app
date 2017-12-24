@@ -1,13 +1,11 @@
-<h1>Product Information</h1>
-
 <div *ngIf="product">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <div class="panel-title">
+  <div class="card">
+    <div class="card-heading">
+      <div class="card-title">
         <h3>Product Info</h3>
       </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
       <div class="form-group">
         <label for="productName">Product Name</label>
         <input id="productName" class="form-control" [(ngModel)]="product.productName">
@@ -25,10 +23,9 @@
         <input id="url" class="form-control" [(ngModel)]="product.url">
       </div>
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
       <button class="btn btn-primary" (click)="saveProduct()">Save</button>
       <button class="btn btn-default">Cancel</button>
     </div>
-
   </div>
 </div>

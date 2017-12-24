@@ -1,0 +1,25 @@
+<div class="container">
+  <div *ngIf="settings">
+    <div class="card">
+      <div class="card-heading">
+        <div class="card-title">
+          <h3>Settings</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="defaultPrice">Default Price</label>
+          <input id="defaultPrice" class="form-control" [(ngModel)]="settings.defaultPrice">
+        </div>
+        <div class="form-group">
+          <label for="defaultUrl">Default Url</label>
+          <input id="defaultUrl" class="form-control" [(ngModel)]="settings.defaultUrl">
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary" (click)="saveSettings()">Save</button>
+        <button class="btn btn-default">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
