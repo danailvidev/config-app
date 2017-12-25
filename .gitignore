@@ -32,8 +32,8 @@
 npm-debug.log
 testem.log
 /typings
-src/firebase.json
-src/environments/environment.prod*
+/src/firebase.json
+/src/environments/environment.prod.ts
 
 # e2e
 /e2e/*.js
