@@ -54,22 +54,6 @@ export class AppSettingsService {
         }
     }
 
-    getSettingsFallback() {
-        const settings = localStorage.getItem(SETTINGS_KEY);
-        if (settings) {
-            return of(JSON.parse(settings));
-        } else {
-            return this.httpClient.get<AppSettings>(SETTINGS_LOCATION).pipe(
-                tap(data => {
-                    if (data) {
-                        this.saveSettings(data);
-                    }
-                }),
-                catchError(this.handleError<AppSettings>('getSettings', new AppSettings()))
-            );
-        }
-    }
-
     deleteSettings(): void {
         localStorage.removeItem(SETTINGS_KEY);
     }
