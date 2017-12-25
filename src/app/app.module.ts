@@ -7,6 +7,11 @@ import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './routing.module';
 import { AppComponent } from './app.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +22,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     CoreModule,
     SharedModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

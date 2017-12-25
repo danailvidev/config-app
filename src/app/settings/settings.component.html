@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngIf="settings">
+  <div *ngIf="settings; else nosettings">
     <div class="card">
       <div class="card-heading">
         <div class="card-title">
@@ -15,11 +15,20 @@
           <label for="defaultUrl">Default Url</label>
           <input id="defaultUrl" class="form-control" [(ngModel)]="settings.defaultUrl">
         </div>
+        <div class="form-group">
+          <label for="isFromLocalStorage">isFromLocalStorage</label>
+          <input id="isFromLocalStorage" disabled class="form-control" [(ngModel)]="settings.isFromLocalStorage">
+        </div>
       </div>
       <div class="card-footer">
         <button class="btn btn-primary" (click)="saveSettings()">Save</button>
+        <button class="btn btn-primary" (click)="deleteSettings()">Delete</button>
         <button class="btn btn-default">Cancel</button>
       </div>
     </div>
   </div>
+
+  <ng-template #nosettings>
+    <h3>Loading...</h3>
+  </ng-template>
 </div>
